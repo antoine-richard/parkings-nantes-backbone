@@ -1,24 +1,81 @@
 body {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 12px;
-	color: #444;
-}
-ul {
-	list-style: none;
-	border-top: 1px solid #888;
-	border-right: 1px solid #888;
-	border-left: 1px solid #888;
+	color: #ccc;
+	background: #000;
 	margin: 20px;
 	padding: 0;
 }
+section {
+	margin: 0;
+	padding: 0;
+}
+
+#container {
+	position: relative;
+	width: 300px;
+	height: 600px;
+	margin: 0 auto;
+	-webkit-perspective: 800px;
+	-moz-perspective: 800px;
+	-o-perspective: 800px;
+	perspective: 800px;
+}
+#card {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	-webkit-transition: -webkit-transform 1s;
+	-moz-transition: -moz-transform 1s;
+	-o-transition: -o-transform 1s;
+	transition: transform 1s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+#card.flipped {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+#card section {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	border: 2px solid #555;
+	border-radius: 5px;
+	background: #2a2a2a;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+#card section:last-child {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
 li {
-	border-bottom: 1px solid #888;
 	margin: 0;
 	padding: 4px 8px;
+	border-bottom: 1px solid #555;
+}
+li:last-child {
+	border-bottom: 0;
 }
 
 li span:first-child {
-	padding-right: 10px;
+	padding-right: 15px;
 }
 li span:nth-child(2) {
 	font-weight: bold;
