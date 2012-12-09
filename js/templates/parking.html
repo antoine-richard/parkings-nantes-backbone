@@ -1,3 +1,12 @@
-<span><%= Grp_nom %></span>
-<span><%= Grp_disponible %></span>
-<span>/ <%= Grp_exploitation %></span>
+<span>
+	<%= Grp_nom %>
+</span>
+<% if (subscriberOnly()) { %>
+	<span class="subscriber">ABO</span>
+<% } else { %>
+	<span<% if (almostFull()) { %> class="almost-full"<% } %>>
+		<%= Grp_disponible %>
+	</span>
+<% } %>
+
+
