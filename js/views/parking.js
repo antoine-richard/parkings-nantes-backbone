@@ -6,7 +6,7 @@ define([
 
   var ParkingView = Backbone.View.extend({
 
-    tagName:  "li",
+    tagName: "li",
 
     template: _.template(parkingTemplate),
 

@@ -4,7 +4,8 @@ define([
   'backbone',
   'collections/parkings',
   'views/parking',
-], function($, _, Backbone, parkings, ParkingView) {
+  'views/error'
+], function($, _, Backbone, parkings, ParkingView, ErrorView) {
 
   var ParkingsView = Backbone.View.extend({
 
@@ -12,7 +13,14 @@ define([
 
     initialize: function() {
       parkings.on('reset', this.onReset, this);
-      parkings.fetch();
+      this.fetchData();
+    },
+
+    fetchData: function() {
+      parkings.fetch()
+      .fail(function() {
+        new ErrorView().render();
+      });
     },
 
     onReset: function() {

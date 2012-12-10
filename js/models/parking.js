@@ -8,9 +8,9 @@ define([
   		subscriberOnly: function() {
   			return this.Grp_statut == 2;
   		},
-        almostFull: function() {
-            return +this.Grp_disponible <= +this.Grp_complet;
-        }
+      almostFull: function() {
+          return +this.Grp_disponible <= +this.Grp_complet;
+      }
     }
 
   });
