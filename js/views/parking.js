@@ -1,8 +1,9 @@
 define([ 
   'underscore', 
   'backbone',
-  'text!templates/parking.html'
-], function(_, Backbone, parkingTemplate) {
+  'text!templates/parking.html',
+  'views/parking-detailed'
+], function(_, Backbone, parkingTemplate, ParkingDetailedView) {
 
   var ParkingView = Backbone.View.extend({
 
@@ -20,6 +21,7 @@ define([
     },
 
     flip: function() {
+      var detailedView = new ParkingDetailedView({ model: this.model }).render();
       $('#card').addClass('flipped');
     }
 
