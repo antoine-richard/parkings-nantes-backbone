@@ -1,8 +1,7 @@
-define([ 
-  'underscore',
+define([
   'backbone',
   'text!templates/error.html'
-], function(_, Backbone, errorTemplate) {
+], function(Backbone, errorTemplate) {
 
   var ErrorView = Backbone.View.extend({
 

@@ -1,11 +1,9 @@
 define([
-  'jquery',
-  'underscore',
   'backbone',
   'collections/parkings',
   'views/parking',
   'views/error'
-], function($, _, Backbone, parkings, ParkingView, ErrorView) {
+], function(Backbone, parkings, ParkingView, ErrorView) {
 
   var ParkingsView = Backbone.View.extend({
 

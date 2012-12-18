@@ -1,8 +1,7 @@
-define([ 
-  'underscore', 
+define([
   'backbone',
   'text!templates/parking-detailed.html'
-], function(_, Backbone, parkingDetailedTemplate) {
+], function(Backbone, parkingDetailedTemplate) {
 
   var ParkingDetailedView = Backbone.View.extend({
 
