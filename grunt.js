@@ -3,7 +3,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     clean: {
-      build: ['build']
+      dist: ['dist']
     },
 
 /*
@@ -18,29 +18,24 @@ module.exports = function (grunt) {
     requirejs: {
       std: {
         options: {
+          mainConfigFile: 'src/js/main.js',
           almond: true,
           replaceRequireScript: [{
-            files: ['build/index.html'],
+            files: ['dist/index.html'],
             module: 'main'/*,
-            modulePath: 'js/main-build'*/
+            modulePath: 'js/main'*/
           }],
           modules: [{name: 'main'}],
-          dir: 'build',
+          dir: 'dist',
           appDir: 'src',
-          baseUrl: 'js',
-          paths: {
-            jquery:     'libs/jquery/1.8.3/jquery',
-            underscore: 'libs/lodash/1.0.0-rc.1/lodash',
-            backbone:   'libs/backbone/0.9.9-amdjs/backbone',
-            text:       'libs/require/plugins/text/2.0.5/text'
-          }
+          baseUrl: 'js'
         }
       }
     }
 
   });
 
-  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-clean'); // 0.3.1
   //grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-requirejs');
 
